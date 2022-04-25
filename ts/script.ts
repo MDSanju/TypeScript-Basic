@@ -6,3 +6,11 @@ const arr2: string[] = ["Go", "Munia", "Sanju", "Canada", "Python"];
 const mapping: number[] = arr.map((e) => e * 2);
 
 console.log(mapping);
+
+const arrowFunc = (aOne: number, aTwo: number) => {
+  const res: number = aOne + aTwo;
+
+  return res;
+};
+
+console.log(arrowFunc(5, 7));
