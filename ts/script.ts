@@ -14,3 +14,24 @@ const arrowFunc = (aOne: number, aTwo: number) => {
 };
 
 console.log(arrowFunc(5, 7));
+
+console.log("Pakistan Zindabad!");
+
+console.log("#mranKhan");
+
+let playerNames: string[];
+
+playerNames = ["Afridi", "Babar Azam", "Imran Khan"];
+
+console.log(playerNames.map((data) => data + ", He is only one!"));
+
+function multiply(x: number, y: number): number {
+  const M = x * y;
+  return M;
+}
+
+function callInsideIt(callBack: any): void {
+  console.log(callBack(2, 3));
+}
+
+callInsideIt(multiply);
