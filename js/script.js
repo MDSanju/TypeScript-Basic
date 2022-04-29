@@ -50,3 +50,26 @@ const sayHello = (user) => {
 };
 userDetails(12, { name: 'Sanju', age: 25 });
 sayHello({ name: 'Todd', age: 51 });
+// Function Signatures
+let myFunc;
+let add;
+add = (ae, ps) => {
+    const multiply = ae * ps;
+    return multiply;
+};
+console.log(add(25, 6));
+let calc;
+calc = (ae, ps, color) => {
+    if (color === 'black') {
+        return ae + ps;
+    }
+    else {
+        return ae - ps;
+    }
+};
+console.log(calc(25, 6, 'black'));
+let userInformations;
+userInformations = (id, person) => {
+    console.log(`User's ID: ${id}, Name: ${person.age > 50 ? 'SIR' : 'MR.'} ${person.name}, Age: ${person.age}`);
+};
+userInformations(6, { name: 'Sanju', age: 25 });

@@ -91,3 +91,41 @@ const sayHello = (user: userType) => {
 
 userDetails(12, {name: 'Sanju', age: 25});
 sayHello({name: 'Todd', age: 51});
+
+
+// Function Signatures
+
+let myFunc: () => void;
+let add: (x: number, y: number) => number;
+
+
+add = (ae: number, ps: number) => {
+  const multiply = ae * ps;
+  return multiply;
+}
+
+console.log(add(25, 6));
+
+
+let calc: (prOne: number, prTwo: number, prThree: string) => number;
+
+calc = (ae: number, ps: number, color: string) => {
+  if (color === 'black') {
+    return ae + ps;
+  } else {
+    return ae - ps;
+  }
+};
+
+console.log(calc(25, 6, 'black'));
+
+
+
+let userInformations: (id: number | string, userInfo: {name: string, age: number}) => void;
+
+userInformations = (id: string | number, person: {name: string, age: number}) => {
+  console.log(`User's ID: ${id}, Name: ${person.age > 50 ? 'SIR' : 'MR.'} ${person.name}, Age: ${person.age}`);
+  
+}
+
+userInformations(6, {name: 'Sanju', age: 25});
