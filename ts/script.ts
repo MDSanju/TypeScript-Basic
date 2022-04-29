@@ -71,3 +71,23 @@ func1 = (x: number, y: number, z: number = 3) => {
 };
 
 func1(2, 3, 2);
+
+
+
+// Type Aliases
+
+type stringOrNumber = string | number;
+type userType = {name: string, age: number};
+
+const userDetails = (id: stringOrNumber, user: userType) => {
+  console.log(`User ID: ${id}, Name: ${user.name}, Age: ${user.age}`);
+  
+}
+
+const sayHello = (user: userType) => {
+  console.log(`Hello ${user.age > 50 ? 'Sir' : 'Mr.'} ${user.name}`);
+  
+}
+
+userDetails(12, {name: 'Sanju', age: 25});
+sayHello({name: 'Todd', age: 51});

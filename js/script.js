@@ -42,3 +42,11 @@ func1 = (x, y, z = 3) => {
     console.log(x * y * z);
 };
 func1(2, 3, 2);
+const userDetails = (id, user) => {
+    console.log(`User ID: ${id}, Name: ${user.name}, Age: ${user.age}`);
+};
+const sayHello = (user) => {
+    console.log(`Hello ${user.age > 50 ? 'Sir' : 'Mr.'} ${user.name}`);
+};
+userDetails(12, { name: 'Sanju', age: 25 });
+sayHello({ name: 'Todd', age: 51 });
