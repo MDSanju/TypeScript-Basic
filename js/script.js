@@ -73,3 +73,28 @@ userInformations = (id, person) => {
     console.log(`User's ID: ${id}, Name: ${person.age > 50 ? 'SIR' : 'MR.'} ${person.name}, Age: ${person.age}`);
 };
 userInformations(6, { name: 'Sanju', age: 25 });
+// TypeScript Classes
+class ProgrammingLanguage {
+    constructor(n, a, f, l) {
+        this.name = n;
+        this.age = a;
+        this.framework = f;
+        this.isHighLevel = l;
+    }
+    use(level) {
+        console.log(`Use ${this.name} and ${this.framework} to build your next project! And this is a ${level} programming language!`);
+    }
+}
+// Objects for the Class
+const python = new ProgrammingLanguage('Python', 31, 'Django', true);
+const java = new ProgrammingLanguage('Java', 27, 'Spring', true);
+const c = new ProgrammingLanguage('C++', 42, 'Qt framework', false);
+const javascript = new ProgrammingLanguage('JavaScript', 27, 'React', true);
+python.use('High-Level');
+java.use('High-Level');
+c.use('Low-Level');
+const languageP = [python, java, c];
+languageP.push(javascript);
+for (const e of languageP) {
+    console.log(e.name);
+}
