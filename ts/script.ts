@@ -170,3 +170,49 @@ languageP.push(javascript);
 for (const e of languageP) {
   console.log(e.name);
 }
+
+
+// TypeScript Access Modifiers in Class (Now we can't be able to access the calss's properties from outside of the class. It just get access within the class)
+// Note: public property will be able to access and change from outside the class, private property will not be able to access or change from outside of the class, but readonly property will get access from outside but we can't change the value of the readonly property from outside of the class.
+
+class Result {
+  public subjectName: string;
+  private marks: number;
+  readonly highestMarks: number;
+
+  constructor (sub: string, got: number, highest: number) {
+    this.subjectName = sub;
+    this.marks = got;
+    this.highestMarks = highest;
+  }
+
+
+  getRes() {
+    console.log(`Subject: ${this.subjectName} - Marks: ${this.marks} - Highest: ${this.highestMarks}!`);
+  }
+}
+
+
+const math = new Result('Math', 80, 100);
+const english = new Result('English', 95, 95);
+
+
+math.getRes();
+english.getRes();
+
+
+
+// When we use the Access Modifiers for all class properties, that time we can use this shortcut way as well
+
+class PC {
+  constructor (public nameOfPC: string, private price: number, readonly configuration: string) {}
+
+  detailsPC() {
+    console.log(`PC: ${this.nameOfPC}, Price: ${this.price}, Configurations: ${this.configuration}!`);
+    
+  }
+}
+
+const macbookPro = new PC('Apple Macbook', 300000, 'Core I9');
+
+macbookPro.detailsPC();
