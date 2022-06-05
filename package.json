@@ -1,0 +1,8 @@
+{
+    "name": "my-package",
+    "type": "module",
+    "rootDir": "./ts",
+    "outDir": "./js",
+    "//": "...",
+    "dependencies": {}
+}

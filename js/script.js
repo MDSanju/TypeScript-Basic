@@ -1,4 +1,4 @@
-"use strict";
+import { Laptop } from "./classes/Laptop.js";
 console.log("Hello World");
 const arr = [12, 25, 45, 56];
 const arr2 = ["Go", "Munia", "Sanju", "Canada", "Python"];
@@ -46,10 +46,10 @@ const userDetails = (id, user) => {
     console.log(`User ID: ${id}, Name: ${user.name}, Age: ${user.age}`);
 };
 const sayHello = (user) => {
-    console.log(`Hello ${user.age > 50 ? 'Sir' : 'Mr.'} ${user.name}`);
+    console.log(`Hello ${user.age > 50 ? "Sir" : "Mr."} ${user.name}`);
 };
-userDetails(12, { name: 'Sanju', age: 25 });
-sayHello({ name: 'Todd', age: 51 });
+userDetails(12, { name: "Sanju", age: 25 });
+sayHello({ name: "Todd", age: 51 });
 // Function Signatures
 let myFunc;
 let add;
@@ -60,19 +60,19 @@ add = (ae, ps) => {
 console.log(add(25, 6));
 let calc;
 calc = (ae, ps, color) => {
-    if (color === 'black') {
+    if (color === "black") {
         return ae + ps;
     }
     else {
         return ae - ps;
     }
 };
-console.log(calc(25, 6, 'black'));
+console.log(calc(25, 6, "black"));
 let userInformations;
 userInformations = (id, person) => {
-    console.log(`User's ID: ${id}, Name: ${person.age > 50 ? 'SIR' : 'MR.'} ${person.name}, Age: ${person.age}`);
+    console.log(`User's ID: ${id}, Name: ${person.age > 50 ? "SIR" : "MR."} ${person.name}, Age: ${person.age}`);
 };
-userInformations(6, { name: 'Sanju', age: 25 });
+userInformations(6, { name: "Sanju", age: 25 });
 // TypeScript Classes
 class ProgrammingLanguage {
     constructor(n, a, f, l) {
@@ -86,13 +86,13 @@ class ProgrammingLanguage {
     }
 }
 // Objects for the Class
-const python = new ProgrammingLanguage('Python', 31, 'Django', true);
-const java = new ProgrammingLanguage('Java', 27, 'Spring', true);
-const c = new ProgrammingLanguage('C++', 42, 'Qt framework', false);
-const javascript = new ProgrammingLanguage('JavaScript', 27, 'React', true);
-python.use('High-Level');
-java.use('High-Level');
-c.use('Low-Level');
+const python = new ProgrammingLanguage("Python", 31, "Django", true);
+const java = new ProgrammingLanguage("Java", 27, "Spring", true);
+const c = new ProgrammingLanguage("C++", 42, "Qt framework", false);
+const javascript = new ProgrammingLanguage("JavaScript", 27, "React", true);
+python.use("High-Level");
+java.use("High-Level");
+c.use("Low-Level");
 const languageP = [python, java, c];
 languageP.push(javascript);
 for (const e of languageP) {
@@ -110,8 +110,8 @@ class Result {
         console.log(`Subject: ${this.subjectName} - Marks: ${this.marks} - Highest: ${this.highestMarks}!`);
     }
 }
-const math = new Result('Math', 80, 100);
-const english = new Result('English', 95, 95);
+const math = new Result("Math", 80, 100);
+const english = new Result("English", 95, 95);
 math.getRes();
 english.getRes();
 // When we use the Access Modifiers for all class properties, that time we can use this shortcut way as well
@@ -125,5 +125,23 @@ class PC {
         console.log(`PC: ${this.nameOfPC}, Price: ${this.price}, Configurations: ${this.configuration}!`);
     }
 }
-const macbookPro = new PC('Apple Macbook', 300000, 'Core I9');
+const macbookPro = new PC("Apple Macbook", 300000, "Core I9");
 macbookPro.detailsPC();
+// TypeScript Class Module System
+const hp = new Laptop("Hp", "Core i5", 14, false, 36000);
+hp.configuration();
+// Another Object created below through the Class from Laptop.js
+const apple = new Laptop("MacBook Pro", "quad-core Intel Core i7", 14, true, 7000);
+apple.configuration();
+// Again making an Object
+const dell = new Laptop("Dell XPS 13", "Intel Core i5", 16, true, 2200);
+dell.configuration();
+const drawRect = (size) => {
+    let width = size.width;
+    let length = size.length;
+    console.log(width * length);
+};
+drawRect({
+    width: 30,
+    length: 20,
+});
