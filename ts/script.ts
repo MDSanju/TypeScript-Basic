@@ -1,4 +1,6 @@
 import { Laptop } from "./classes/Laptop.js";
+import { Ghost } from "./classes/Ghost.js";
+import { GhostInt } from "./interfaces/GhostInt.js";
 
 console.log("Hello World");
 
@@ -258,3 +260,14 @@ drawRect({
   width: 30,
   length: 20,
 });
+
+// Interface with JS Class
+
+const umarGulMama = new Ghost("Umar Gul", 5027, "Koye-Kahaf", true, 12, "June");
+umarGulMama.ghostInfo();
+
+// Another one in another way
+
+let gemarfulMama: GhostInt;
+gemarfulMama = new Ghost("Gemarful", 3089, "Koye-Kahaf", false, 7, "August");
+gemarfulMama.ghostInfo();
