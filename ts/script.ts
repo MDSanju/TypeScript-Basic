@@ -325,4 +325,25 @@ const res01: APIResponse<{name: string; roll: number; class: number; isMarried: 
   }
 }
 
-console.log(res01.data.class);
+console.log(res01.data.roll);
+
+// ENUM Types
+
+enum ResType {
+  SUCCESS,
+  FAILURE,
+  UNAUTHENTICATED,
+  FORBIDDEN,
+}
+
+interface AuthRes {
+  status: number;
+  type: ResType;
+}
+
+const res02: AuthRes = {
+  status: 404,
+  type: ResType.UNAUTHENTICATED,
+};
+
+console.log(res02.type);

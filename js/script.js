@@ -180,4 +180,17 @@ const res01 = {
         isMarried: true,
     }
 };
-console.log(res01.data.class);
+console.log(res01.data.roll);
+// ENUM Types
+var ResType;
+(function (ResType) {
+    ResType[ResType["SUCCESS"] = 0] = "SUCCESS";
+    ResType[ResType["FAILURE"] = 1] = "FAILURE";
+    ResType[ResType["UNAUTHENTICATED"] = 2] = "UNAUTHENTICATED";
+    ResType[ResType["FORBIDDEN"] = 3] = "FORBIDDEN";
+})(ResType || (ResType = {}));
+const res02 = {
+    status: 404,
+    type: ResType.UNAUTHENTICATED,
+};
+console.log(res02.type);
