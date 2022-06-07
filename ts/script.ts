@@ -302,3 +302,27 @@ let user = addId({
 // addId(user)
 
 console.log(user.id);
+
+
+
+
+// Generics uses for Interface
+
+interface APIResponse<T> {
+  status: number;
+  type: string;
+  data: T;
+}
+
+const res01: APIResponse<{name: string; roll: number; class: number; isMarried: boolean}> = {
+  status: 200,
+  type: "Good",
+  data: {
+    name: "Sanju",
+    roll: 19,
+    class: 10,
+    isMarried: true,
+  }
+}
+
+console.log(res01.data.class);
