@@ -153,3 +153,20 @@ umarGulMama.ghostInfo();
 let gemarfulMama;
 gemarfulMama = new Ghost("Gemarful", 3089, "Koye-Kahaf", false, 7, "August");
 gemarfulMama.ghostInfo();
+// Uses of Generics with a function
+const addId = (obj) => {
+    let id = Math.floor(Math.random() * 100);
+    return Object.assign(Object.assign({}, obj), { id });
+};
+let user = addId({
+    name: "Evil Dead",
+    type: "Ghost",
+    age: 2377,
+});
+// let user = {
+//   name: "Evil Dead",
+//   type: "Ghost",
+//   age: 2377,
+// }
+// addId(user)
+console.log(user.id);
