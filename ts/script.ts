@@ -347,3 +347,14 @@ const res02: AuthRes = {
 };
 
 console.log(res02.type);
+
+
+
+// TUPLES (only used for Array, and in tuple the array element's order is important)
+
+const tupleArr:[number, string, object] = [3, "Success", {name: "sanSanju", age: 26, isMarrid: true}];
+
+// But you can push or pop anything else, just can't break the order's type! (But note is, we never do push or pop in tuple, cause the it should be fixed the types and elements of tuple, so in this scense, doing push or pop in tuple in unnecessary, no needed!)
+tupleArr.push([1, 2, 3]);
+
+tupleArr.forEach(e => console.log(e));
