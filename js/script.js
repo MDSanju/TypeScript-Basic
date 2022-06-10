@@ -199,3 +199,14 @@ const tupleArr = [3, "Success", { name: "sanSanju", age: 26, isMarrid: true }];
 // But you can push or pop anything else, just can't break the order's type! (But note is, we never do push or pop in tuple, cause the it should be fixed the types and elements of tuple, so in this scense, doing push or pop in tuple in unnecessary, no needed!)
 tupleArr.push([1, 2, 3]);
 tupleArr.forEach(e => console.log(e));
+// Union Data-Type with Functions
+const uniFunc = (userId) => {
+    console.log(`Your ID NO: ${userId}`);
+};
+uniFunc("05");
+// Array Data-Type
+// Different way to declare an Array Types
+let userNames; // let userName: string[]; -- both are same just the syntax is different!
+userNames = ["San", "Kayel", "Bob"];
+const sortedUserNames = userNames.sort();
+sortedUserNames.forEach(userName => console.log(userName));

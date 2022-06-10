@@ -358,3 +358,22 @@ const tupleArr:[number, string, object] = [3, "Success", {name: "sanSanju", age:
 tupleArr.push([1, 2, 3]);
 
 tupleArr.forEach(e => console.log(e));
+
+
+// Union Data-Type with Functions
+
+const uniFunc = (userId: string | number) => {
+  console.log(`Your ID NO: ${userId}`);
+  
+}
+
+uniFunc("05");
+
+// Array Data-Type
+// Different way to declare an Array Types
+let userNames: Array<string>; // let userName: string[]; -- both are same just the syntax is different!
+
+userNames = ["San", "Kayel", "Bob"];
+const sortedUserNames = userNames.sort();
+
+sortedUserNames.forEach(userName => console.log(userName));
