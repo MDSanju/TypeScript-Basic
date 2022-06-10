@@ -210,3 +210,57 @@ let userNames; // let userName: string[]; -- both are same just the syntax is di
 userNames = ["San", "Kayel", "Bob"];
 const sortedUserNames = userNames.sort();
 sortedUserNames.forEach(userName => console.log(userName));
+let tupleDataTypes;
+tupleDataTypes = ['Sanju', true, 26, { name: "Munia", height: "5 feet 3 inch", age: 23, isWhite: true }];
+console.log(`His name: ${tupleDataTypes[0]}, Age: ${tupleDataTypes[2]}, He is ${tupleDataTypes[1] === true ? "Married" : "unmarried"}, His wife is ${tupleDataTypes[3].name}. Her age: ${tupleDataTypes[3].age} and height: ${tupleDataTypes[3].height}.`);
+// Enum Data Types
+// Numeric Enum --
+var UserReq;
+(function (UserReq) {
+    UserReq[UserReq["ReadData"] = 0] = "ReadData";
+    UserReq[UserReq["SaveData"] = 1] = "SaveData";
+    UserReq[UserReq["DeleteData"] = 2] = "DeleteData";
+    UserReq[UserReq["GetData"] = 3] = "GetData";
+})(UserReq || (UserReq = {}));
+// started from 0 index
+console.log(UserReq);
+var UserReqTwo;
+(function (UserReqTwo) {
+    UserReqTwo[UserReqTwo["ReadData"] = 1] = "ReadData";
+    UserReqTwo[UserReqTwo["SaveData"] = 2] = "SaveData";
+    UserReqTwo[UserReqTwo["DeleteData"] = 3] = "DeleteData";
+    UserReqTwo[UserReqTwo["GetData"] = 4] = "GetData";
+})(UserReqTwo || (UserReqTwo = {}));
+// it will start from 1 index, that is the difference between these 2 kinds of enums
+console.log(UserReqTwo);
+// More different rule
+var UserReqThree;
+(function (UserReqThree) {
+    UserReqThree[UserReqThree["ReadData"] = 1] = "ReadData";
+    UserReqThree[UserReqThree["SaveData"] = 5] = "SaveData";
+    UserReqThree[UserReqThree["DeleteData"] = 8] = "DeleteData";
+    UserReqThree[UserReqThree["GetData"] = 9] = "GetData";
+})(UserReqThree || (UserReqThree = {}));
+console.log(UserReqThree);
+console.log(UserReqThree.DeleteData);
+// String Enum
+var StringEnumType;
+(function (StringEnumType) {
+    StringEnumType["ReadData"] = "READ_DATA";
+    StringEnumType["SaveData"] = "SAVE_DATA";
+    StringEnumType["DeleteData"] = "DELETE_DATA";
+    StringEnumType["GetData"] = "GET_DATA";
+})(StringEnumType || (StringEnumType = {}));
+console.log(StringEnumType.GetData);
+console.log(StringEnumType["DeleteData"]);
+// Hetergenous Enum
+var RequestTypeHete;
+(function (RequestTypeHete) {
+    RequestTypeHete["ReadData"] = "READ_DATA";
+    RequestTypeHete["SaveData"] = "SAVE_DATA";
+    RequestTypeHete["DeleteData"] = "DELETE_DATA";
+    RequestTypeHete["GetData"] = "GET_DATA";
+    RequestTypeHete[RequestTypeHete["id"] = 101] = "id";
+})(RequestTypeHete || (RequestTypeHete = {}));
+console.log(RequestTypeHete.id);
+console.log(RequestTypeHete.SaveData);

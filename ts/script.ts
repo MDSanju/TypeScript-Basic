@@ -377,3 +377,80 @@ userNames = ["San", "Kayel", "Bob"];
 const sortedUserNames = userNames.sort();
 
 sortedUserNames.forEach(userName => console.log(userName));
+
+// Tuple Data Types
+
+interface wife {
+  name: string;
+  height: string;
+  age: number;
+  isWhite: boolean;
+}
+
+let tupleDataTypes: [string, boolean, number, wife];
+
+tupleDataTypes = ['Sanju', true, 26, {name: "Munia", height: "5 feet 3 inch", age: 23, isWhite: true}];
+
+console.log(`His name: ${tupleDataTypes[0]}, Age: ${tupleDataTypes[2]}, He is ${tupleDataTypes[1] === true ? "Married" : "unmarried"}, His wife is ${tupleDataTypes[3].name}. Her age: ${tupleDataTypes[3].age} and height: ${tupleDataTypes[3].height}.`);
+
+
+// Enum Data Types
+
+// Numeric Enum --
+enum UserReq {
+  ReadData,
+  SaveData,
+  DeleteData,
+  GetData,
+}
+// started from 0 index
+console.log(UserReq);
+
+enum UserReqTwo {
+  ReadData = 1,
+  SaveData,
+  DeleteData,
+  GetData,
+}
+
+// it will start from 1 index, that is the difference between these 2 kinds of enums
+console.log(UserReqTwo);
+
+// More different rule
+
+enum UserReqThree {
+  ReadData = 1,
+  SaveData = 5,
+  DeleteData = 8,
+  GetData,
+}
+
+console.log(UserReqThree);
+console.log(UserReqThree.DeleteData);
+
+
+// String Enum
+
+enum StringEnumType {
+  ReadData = "READ_DATA",
+  SaveData = "SAVE_DATA",
+  DeleteData = "DELETE_DATA",
+  GetData = "GET_DATA",
+}
+
+console.log(StringEnumType.GetData);
+console.log(StringEnumType["DeleteData"]);
+
+
+// Hetergenous Enum
+
+enum RequestTypeHete {
+  ReadData = "READ_DATA",
+  SaveData = "SAVE_DATA",
+  DeleteData = "DELETE_DATA",
+  GetData = "GET_DATA",
+  id = 101,
+}
+
+console.log(RequestTypeHete.id);
+console.log(RequestTypeHete.SaveData);
