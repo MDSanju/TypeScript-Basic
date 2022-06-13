@@ -264,3 +264,11 @@ var RequestTypeHete;
 })(RequestTypeHete || (RequestTypeHete = {}));
 console.log(RequestTypeHete.id);
 console.log(RequestTypeHete.SaveData);
+let getRequest;
+getRequest = "GET";
+console.log(getRequest);
+const postRequest = (params) => {
+    const post = params;
+    console.log(post);
+};
+postRequest('POST');

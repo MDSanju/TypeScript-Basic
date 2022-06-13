@@ -454,3 +454,20 @@ enum RequestTypeHete {
 
 console.log(RequestTypeHete.id);
 console.log(RequestTypeHete.SaveData);
+
+
+
+// Custom Type
+type RequestType = "GET" | "POST";
+
+let getRequest: RequestType;
+getRequest = "GET";
+console.log(getRequest);
+
+
+const postRequest = (params: RequestType) => {
+  const post = params;
+  console.log(post);
+}
+
+postRequest('POST');
