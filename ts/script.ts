@@ -471,3 +471,79 @@ const postRequest = (params: RequestType) => {
 }
 
 postRequest('POST');
+
+
+
+// Class Types
+class Bottle {
+  constructor(
+    public liter: number,
+    public company: string,
+    public whatFor: string,
+    public color: string,
+    public price: number
+  ){}
+
+  theBottle() {
+    console.log(`This is a ${this.whatFor} Bottle! Company Name: ${this.company}, Size: ${this.liter} liters! Price: ${this.price}/=.`);
+  }
+}
+
+const spa = new Bottle(2, 'Spa', 'Water', 'Transparent', 25);
+spa.theBottle();
+
+
+interface NoodlesType {
+  name: string;
+  size: number;
+  price: number;
+}
+
+class NoodlesPack implements NoodlesType {
+  name: string;
+  size: number;
+  price: number;
+
+  constructor(name: string, size: number, price: number){
+    this.name = name;
+    this.size = size;
+    this.price = price;
+  }
+
+  mFunc(){
+    console.log(`Noodles name ${this.name}! Price: ${this.price}/=`);
+  }
+}
+
+const magi = new NoodlesPack('Magi Noodles', 250, 15);
+magi.mFunc();
+
+
+
+// Class Inheritance in TypeScript
+class CommonClass {
+  name: string;
+  age: number;
+
+  constructor(name: string, age: number) {
+    this.name = name;
+    this.age = age;
+  }
+
+  commonFunc () : void {
+    console.log(`Name: ${this.name}. Age: ${this.age}.`);
+  }
+}
+
+// Inherit Class
+class Student extends CommonClass {
+  studentId: number;
+
+  constructor(name: string, age: number, studentId: number) {
+    super(name, age);
+    this.studentId = studentId;
+  }
+}
+
+const student1 = new Student('Sanju', 25, 1);
+student1.commonFunc();
