@@ -318,3 +318,24 @@ class Student extends CommonClass {
 }
 const student1 = new Student('Sanju', 25, 1);
 student1.commonFunc();
+// Abstract Class
+class AbsCls {
+    constructor(perfumeBrand, perfumeSmell, price, rating) {
+        this.perfumeBrand = perfumeBrand;
+        this.perfumeSmell = perfumeSmell;
+        this.price = price;
+        this.rating = rating;
+    }
+}
+class Perfume extends AbsCls {
+    constructor(perfumeBrand, perfumeSmell, price, rating, variant, color) {
+        super(perfumeBrand, perfumeSmell, price, rating);
+        this.variant = variant;
+        this.color = color;
+    }
+    absFunc() {
+        console.log(`Perfume: ${this.perfumeBrand}. Smell: ${this.perfumeSmell}. Price: $${this.price}. Variant: ${this.variant}. Color: ${this.color}. Rating: ${this.rating ? 'Excellent' : 'Not Bad'}!`);
+    }
+}
+const creedAventus = new Perfume('Creed Aventus', 'Insane', 580, true, 'Apple', 'Gray');
+creedAventus.absFunc();
