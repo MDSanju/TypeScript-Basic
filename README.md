@@ -16,7 +16,7 @@
 
 => Class uses with TypeScript;
 
-=> Access Modifiers;
+=> Access Modifiers (Public, Private, Protected & Readonly);
 
 => Module System working in TypeScript;
 
@@ -27,3 +27,7 @@
 => Enum Types;
 
 => Tuples;
+
+=> Abstract Class
+
+=> Encapsulation
