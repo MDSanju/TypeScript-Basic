@@ -1,5 +1,7 @@
 import { Laptop } from "./classes/Laptop.js";
 import { Ghost } from "./classes/Ghost.js";
+import { studentInfoFunc } from "./student/Student.js";
+import { age } from "./student/Info.js";
 console.log("Hello World");
 const arr = [12, 25, 45, 56];
 const arr2 = ["Go", "Munia", "Sanju", "Canada", "Python"];
@@ -178,7 +180,7 @@ const res01 = {
         roll: 19,
         class: 10,
         isMarried: true,
-    }
+    },
 };
 console.log(res01.data.roll);
 // ENUM Types
@@ -195,10 +197,14 @@ const res02 = {
 };
 console.log(res02.type);
 // TUPLES (only used for Array, and in tuple the array element's order is important)
-const tupleArr = [3, "Success", { name: "sanSanju", age: 26, isMarrid: true }];
+const tupleArr = [
+    3,
+    "Success",
+    { name: "sanSanju", age: 26, isMarrid: true },
+];
 // But you can push or pop anything else, just can't break the order's type! (But note is, we never do push or pop in tuple, cause the it should be fixed the types and elements of tuple, so in this scense, doing push or pop in tuple in unnecessary, no needed!)
 tupleArr.push([1, 2, 3]);
-tupleArr.forEach(e => console.log(e));
+tupleArr.forEach((e) => console.log(e));
 // Union Data-Type with Functions
 const uniFunc = (userId) => {
     console.log(`Your ID NO: ${userId}`);
@@ -209,9 +215,14 @@ uniFunc("05");
 let userNames; // let userName: string[]; -- both are same just the syntax is different!
 userNames = ["San", "Kayel", "Bob"];
 const sortedUserNames = userNames.sort();
-sortedUserNames.forEach(userName => console.log(userName));
+sortedUserNames.forEach((userName) => console.log(userName));
 let tupleDataTypes;
-tupleDataTypes = ['Sanju', true, 26, { name: "Munia", height: "5 feet 3 inch", age: 23, isWhite: true }];
+tupleDataTypes = [
+    "Sanju",
+    true,
+    26,
+    { name: "Munia", height: "5 feet 3 inch", age: 23, isWhite: true },
+];
 console.log(`His name: ${tupleDataTypes[0]}, Age: ${tupleDataTypes[2]}, He is ${tupleDataTypes[1] === true ? "Married" : "unmarried"}, His wife is ${tupleDataTypes[3].name}. Her age: ${tupleDataTypes[3].age} and height: ${tupleDataTypes[3].height}.`);
 // Enum Data Types
 // Numeric Enum --
@@ -271,7 +282,7 @@ const postRequest = (params) => {
     const post = params;
     console.log(post);
 };
-postRequest('POST');
+postRequest("POST");
 // Class Types
 class Bottle {
     constructor(liter, company, whatFor, color, price) {
@@ -285,7 +296,7 @@ class Bottle {
         console.log(`This is a ${this.whatFor} Bottle! Company Name: ${this.company}, Size: ${this.liter} liters! Price: ${this.price}/=.`);
     }
 }
-const spa = new Bottle(2, 'Spa', 'Water', 'Transparent', 25);
+const spa = new Bottle(2, "Spa", "Water", "Transparent", 25);
 spa.theBottle();
 class NoodlesPack {
     constructor(name, size, price) {
@@ -297,7 +308,7 @@ class NoodlesPack {
         console.log(`Noodles name ${this.name}! Price: ${this.price}/=`);
     }
 }
-const magi = new NoodlesPack('Magi Noodles', 250, 15);
+const magi = new NoodlesPack("Magi Noodles", 250, 15);
 magi.mFunc();
 // Class Inheritance in TypeScript
 class CommonClass {
@@ -316,7 +327,7 @@ class Student extends CommonClass {
         this.studentId = studentId;
     }
 }
-const student1 = new Student('Sanju', 25, 1);
+const student1 = new Student("Sanju", 25, 1);
 student1.commonFunc();
 // Abstract Class
 class AbsCls {
@@ -334,10 +345,10 @@ class Perfume extends AbsCls {
         this.color = color;
     }
     absFunc() {
-        console.log(`Perfume: ${this.perfumeBrand}. Smell: ${this.perfumeSmell}. Price: $${this.price}. Variant: ${this.variant}. Color: ${this.color}. Rating: ${this.rating ? 'Excellent' : 'Not Bad'}!`);
+        console.log(`Perfume: ${this.perfumeBrand}. Smell: ${this.perfumeSmell}. Price: $${this.price}. Variant: ${this.variant}. Color: ${this.color}. Rating: ${this.rating ? "Excellent" : "Not Bad"}!`);
     }
 }
-const creedAventus = new Perfume('Creed Aventus', 'Insane', 580, true, 'Apple', 'Gray');
+const creedAventus = new Perfume("Creed Aventus", "Insane", 580, true, "Apple", "Gray");
 creedAventus.absFunc();
 // Encapsulation
 // --encapsulation is nothing but the members of a Class, that's the Encapsulation actually!
@@ -359,7 +370,9 @@ class PColor {
         return this.colorOfP;
     }
 }
-const itsColor = new PColor('Black', 1);
-itsColor.setThePrivateVar('Black');
+const itsColor = new PColor("Black", 1);
+itsColor.setThePrivateVar("Black");
 console.log(itsColor.getThePrivateVar());
 itsColor.pColFunc();
+// Module Export & Import
+studentInfoFunc(age);

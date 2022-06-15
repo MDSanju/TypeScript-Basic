@@ -1,6 +1,8 @@
 import { Laptop } from "./classes/Laptop.js";
 import { Ghost } from "./classes/Ghost.js";
 import { GhostInt } from "./interfaces/GhostInt.js";
+import { studentInfoFunc } from "./student/Student.js";
+import { age } from "./student/Info.js";
 
 console.log("Hello World");
 
@@ -272,27 +274,27 @@ let gemarfulMama: GhostInt;
 gemarfulMama = new Ghost("Gemarful", 3089, "Koye-Kahaf", false, 7, "August");
 gemarfulMama.ghostInfo();
 
-
-
 // Uses of Generics with a function
 
-const addId = <T extends {
-  name: string;
-  type: string;
-  age: number;
-}>(obj: T) => {
+const addId = <
+  T extends {
+    name: string;
+    type: string;
+    age: number;
+  }
+>(
+  obj: T
+) => {
   let id = Math.floor(Math.random() * 100);
 
-  return {...obj, id};
+  return { ...obj, id };
 };
-
 
 let user = addId({
   name: "Evil Dead",
   type: "Ghost",
   age: 2377,
 });
-
 
 // let user = {
 //   name: "Evil Dead",
@@ -303,9 +305,6 @@ let user = addId({
 
 console.log(user.id);
 
-
-
-
 // Generics uses for Interface
 
 interface APIResponse<T> {
@@ -314,7 +313,12 @@ interface APIResponse<T> {
   data: T;
 }
 
-const res01: APIResponse<{name: string; roll: number; class: number; isMarried: boolean}> = {
+const res01: APIResponse<{
+  name: string;
+  roll: number;
+  class: number;
+  isMarried: boolean;
+}> = {
   status: 200,
   type: "Good",
   data: {
@@ -322,8 +326,8 @@ const res01: APIResponse<{name: string; roll: number; class: number; isMarried: 
     roll: 19,
     class: 10,
     isMarried: true,
-  }
-}
+  },
+};
 
 console.log(res01.data.roll);
 
@@ -348,24 +352,24 @@ const res02: AuthRes = {
 
 console.log(res02.type);
 
-
-
 // TUPLES (only used for Array, and in tuple the array element's order is important)
 
-const tupleArr:[number, string, object] = [3, "Success", {name: "sanSanju", age: 26, isMarrid: true}];
+const tupleArr: [number, string, object] = [
+  3,
+  "Success",
+  { name: "sanSanju", age: 26, isMarrid: true },
+];
 
 // But you can push or pop anything else, just can't break the order's type! (But note is, we never do push or pop in tuple, cause the it should be fixed the types and elements of tuple, so in this scense, doing push or pop in tuple in unnecessary, no needed!)
 tupleArr.push([1, 2, 3]);
 
-tupleArr.forEach(e => console.log(e));
-
+tupleArr.forEach((e) => console.log(e));
 
 // Union Data-Type with Functions
 
 const uniFunc = (userId: string | number) => {
   console.log(`Your ID NO: ${userId}`);
-  
-}
+};
 
 uniFunc("05");
 
@@ -376,7 +380,7 @@ let userNames: Array<string>; // let userName: string[]; -- both are same just t
 userNames = ["San", "Kayel", "Bob"];
 const sortedUserNames = userNames.sort();
 
-sortedUserNames.forEach(userName => console.log(userName));
+sortedUserNames.forEach((userName) => console.log(userName));
 
 // Tuple Data Types
 
@@ -389,10 +393,20 @@ interface wife {
 
 let tupleDataTypes: [string, boolean, number, wife];
 
-tupleDataTypes = ['Sanju', true, 26, {name: "Munia", height: "5 feet 3 inch", age: 23, isWhite: true}];
+tupleDataTypes = [
+  "Sanju",
+  true,
+  26,
+  { name: "Munia", height: "5 feet 3 inch", age: 23, isWhite: true },
+];
 
-console.log(`His name: ${tupleDataTypes[0]}, Age: ${tupleDataTypes[2]}, He is ${tupleDataTypes[1] === true ? "Married" : "unmarried"}, His wife is ${tupleDataTypes[3].name}. Her age: ${tupleDataTypes[3].age} and height: ${tupleDataTypes[3].height}.`);
-
+console.log(
+  `His name: ${tupleDataTypes[0]}, Age: ${tupleDataTypes[2]}, He is ${
+    tupleDataTypes[1] === true ? "Married" : "unmarried"
+  }, His wife is ${tupleDataTypes[3].name}. Her age: ${
+    tupleDataTypes[3].age
+  } and height: ${tupleDataTypes[3].height}.`
+);
 
 // Enum Data Types
 
@@ -428,7 +442,6 @@ enum UserReqThree {
 console.log(UserReqThree);
 console.log(UserReqThree.DeleteData);
 
-
 // String Enum
 
 enum StringEnumType {
@@ -440,7 +453,6 @@ enum StringEnumType {
 
 console.log(StringEnumType.GetData);
 console.log(StringEnumType["DeleteData"]);
-
 
 // Hetergenous Enum
 
@@ -455,8 +467,6 @@ enum RequestTypeHete {
 console.log(RequestTypeHete.id);
 console.log(RequestTypeHete.SaveData);
 
-
-
 // Custom Type
 type RequestType = "GET" | "POST";
 
@@ -464,15 +474,12 @@ let getRequest: RequestType;
 getRequest = "GET";
 console.log(getRequest);
 
-
 const postRequest = (params: RequestType) => {
   const post = params;
   console.log(post);
-}
+};
 
-postRequest('POST');
-
-
+postRequest("POST");
 
 // Class Types
 class Bottle {
@@ -482,16 +489,17 @@ class Bottle {
     public whatFor: string,
     public color: string,
     public price: number
-  ){}
+  ) {}
 
   theBottle() {
-    console.log(`This is a ${this.whatFor} Bottle! Company Name: ${this.company}, Size: ${this.liter} liters! Price: ${this.price}/=.`);
+    console.log(
+      `This is a ${this.whatFor} Bottle! Company Name: ${this.company}, Size: ${this.liter} liters! Price: ${this.price}/=.`
+    );
   }
 }
 
-const spa = new Bottle(2, 'Spa', 'Water', 'Transparent', 25);
+const spa = new Bottle(2, "Spa", "Water", "Transparent", 25);
 spa.theBottle();
-
 
 interface NoodlesType {
   name: string;
@@ -504,21 +512,19 @@ class NoodlesPack implements NoodlesType {
   size: number;
   price: number;
 
-  constructor(name: string, size: number, price: number){
+  constructor(name: string, size: number, price: number) {
     this.name = name;
     this.size = size;
     this.price = price;
   }
 
-  mFunc(){
+  mFunc() {
     console.log(`Noodles name ${this.name}! Price: ${this.price}/=`);
   }
 }
 
-const magi = new NoodlesPack('Magi Noodles', 250, 15);
+const magi = new NoodlesPack("Magi Noodles", 250, 15);
 magi.mFunc();
-
-
 
 // Class Inheritance in TypeScript
 class CommonClass {
@@ -530,7 +536,7 @@ class CommonClass {
     this.age = age;
   }
 
-  commonFunc () : void {
+  commonFunc(): void {
     console.log(`Name: ${this.name}. Age: ${this.age}.`);
   }
 }
@@ -545,11 +551,8 @@ class Student extends CommonClass {
   }
 }
 
-const student1 = new Student('Sanju', 25, 1);
+const student1 = new Student("Sanju", 25, 1);
 student1.commonFunc();
-
-
-
 
 // Abstract Class
 abstract class AbsCls {
@@ -562,7 +565,7 @@ abstract class AbsCls {
     perfumeBrand: string,
     perfumeSmell: string,
     price: number,
-    rating: boolean,
+    rating: boolean
   ) {
     this.perfumeBrand = perfumeBrand;
     this.perfumeSmell = perfumeSmell;
@@ -570,9 +573,8 @@ abstract class AbsCls {
     this.rating = rating;
   }
 
-  abstract absFunc () : any;
+  abstract absFunc(): any;
 }
-
 
 class Perfume extends AbsCls {
   variant: string;
@@ -583,7 +585,7 @@ class Perfume extends AbsCls {
     price: number,
     rating: boolean,
     variant: string,
-    color: string,
+    color: string
   ) {
     super(perfumeBrand, perfumeSmell, price, rating);
     this.variant = variant;
@@ -591,17 +593,28 @@ class Perfume extends AbsCls {
   }
 
   absFunc() {
-    console.log(`Perfume: ${this.perfumeBrand}. Smell: ${this.perfumeSmell}. Price: $${this.price}. Variant: ${this.variant}. Color: ${this.color}. Rating: ${this.rating ? 'Excellent' : 'Not Bad'}!`);
+    console.log(
+      `Perfume: ${this.perfumeBrand}. Smell: ${this.perfumeSmell}. Price: $${
+        this.price
+      }. Variant: ${this.variant}. Color: ${this.color}. Rating: ${
+        this.rating ? "Excellent" : "Not Bad"
+      }!`
+    );
   }
 }
 
-const creedAventus = new Perfume('Creed Aventus', 'Insane', 580, true, 'Apple', 'Gray');
+const creedAventus = new Perfume(
+  "Creed Aventus",
+  "Insane",
+  580,
+  true,
+  "Apple",
+  "Gray"
+);
 creedAventus.absFunc();
-
 
 // Encapsulation
 // --encapsulation is nothing but the members of a Class, that's the Encapsulation actually!
-
 
 // Access Modifiers
 // -- Public | Private | Protected | Readonly --
@@ -629,7 +642,10 @@ class PColor {
   }
 }
 
-const itsColor = new PColor('Black', 1);
-itsColor.setThePrivateVar('Black');
+const itsColor = new PColor("Black", 1);
+itsColor.setThePrivateVar("Black");
 console.log(itsColor.getThePrivateVar());
 itsColor.pColFunc();
+
+// Module Export & Import
+studentInfoFunc(age);
