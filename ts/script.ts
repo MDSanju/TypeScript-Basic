@@ -597,3 +597,39 @@ class Perfume extends AbsCls {
 
 const creedAventus = new Perfume('Creed Aventus', 'Insane', 580, true, 'Apple', 'Gray');
 creedAventus.absFunc();
+
+
+// Encapsulation
+// --encapsulation is nothing but the members of a Class, that's the Encapsulation actually!
+
+
+// Access Modifiers
+// -- Public | Private | Protected | Readonly --
+
+// Private example with a new class
+class PColor {
+  private colorOfP: string;
+  public size: number;
+
+  constructor(c: string, size: number) {
+    this.colorOfP = c;
+    this.size = size;
+  }
+
+  pColFunc(): void {
+    console.log(`It's color ${this.colorOfP} and size ${this.size} M:!`);
+  }
+
+  setThePrivateVar(colorOfP: string): void {
+    this.colorOfP = colorOfP;
+  }
+
+  getThePrivateVar(): string {
+    return this.colorOfP;
+  }
+}
+
+const itsColor = new PColor('Black', 1);
+itsColor.setThePrivateVar('Black');
+console.log(itsColor.getThePrivateVar());
+itsColor.pColFunc();
